@@ -8,6 +8,9 @@
             "phoneNumber": "/faker/phone-number",
             "internet": "/faker/internet",
             "company": "/faker/company",
-            "image": "/faker/image"
+            "image": "/faker/image",
+            "lorem": "/faker/lorem",
+            "date": "/faker/date",
+            "random": "/faker/random"
         });
 }());

@@ -1,1 +1,13 @@
-<p>{{vm.fakeData}}</p>
+<div ng-if="vm.fakeData && !vm.errorMsg">
+    <span class="pull-right"><a ng-click="vm.refresh()">Refresh</a></span>
+    <div ng-repeat="(key, value) in vm.fakeData">
+        {{key}} : <p ng-if="vm.isUrl(value)"><img src="{{value}}" /></p>
+        <span ng-if="!vm.isUrl(value)">{{value}}</span>
+    </div>
+    <div ng-transclude></div>
+</div>
+<div ng-if="vm.errorMsg && !vm.fakeData">
+    <div class="alert-danger">
+        {{vm.fakeData}}
+    </div>
+</div>

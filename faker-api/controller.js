@@ -85,7 +85,91 @@ function FakerController (app) {
         };
 
         res.json(fakerImageDetails);
-    })
+    });
+
+    app.get('/faker/lorem', function (req, res) {
+        var fakerLoremDetails = {
+            words: Faker.Lorem.words(),
+            sentence: Faker.Lorem.sentence(),
+            sentences: Faker.Lorem.sentences(),
+            paragraph: Faker.Lorem.paragraph(),
+            paragraphs: Faker.Lorem.paragraphs()
+        };
+
+        res.json(fakerLoremDetails);
+    });
+
+    app.get('/faker/date', function (req, res) {
+        var fakerDateDetails = {
+            past: Faker.Date.past(),
+            future: Faker.Date.future(),
+            between: Faker.Date.between(),
+            recent: Faker.Date.recent()
+        };
+
+        res.json(fakerDateDetails);
+    });
+    
+    app.get('/faker/random', function (req, res) {
+        var fakerRandomDetails = {
+            number: Faker.random.number(),
+            //array_element: Faker.random.array_element(),
+            city_prefix: Faker.random.city_prefix(),
+            city_suffix: Faker.random.city_suffix(),
+            street_suffix: Faker.random.street_suffix(),
+            br_state: Faker.random.br_state(),
+            br_state_abbr: Faker.random.br_state_abbr(),
+            us_state: Faker.random.us_state(),
+            us_state_abbr: Faker.random.us_state_abbr(),
+            uk_county: Faker.random.uk_county(),
+            uk_country: Faker.random.uk_country(),
+            first_name: Faker.random.first_name(),
+            last_name: Faker.random.last_name(),
+            name_prefix: Faker.random.name_prefix(),
+            name_suffix: Faker.random.name_suffix(),
+            catch_phrase_adjective: Faker.random.catch_phrase_adjective(),
+            catch_phrase_descriptor: Faker.random.catch_phrase_descriptor(),
+            catch_phrase_noun: Faker.random.catch_phrase_noun(),
+            bs_adjective: Faker.random.bs_adjective(),
+            bs_buzz: Faker.random.bs_buzz(),
+            bs_noun: Faker.random.bs_noun(),
+            phone_formats: Faker.random.phone_formats(),
+            domain_suffix: Faker.random.domain_suffix(),
+            avatar_uri: Faker.random.avatar_uri()
+        };
+
+        res.json(fakerRandomDetails);
+    });
+
+    app.get('/faker/definitions', function (req, res) {
+        var fakerDefinitions = {
+            first_name: Faker.definitions.first_name,
+            last_name: Faker.definitions.last_name,
+            name_prefix: Faker.definitions.name_prefix,
+            name_suffix: Faker.definitions.name_suffix,
+            br_state: Faker.definitions.br_state,
+            br_state_abbr: Faker.definitions.br_state_abbr,
+            us_state: Faker.definitions.us_state,
+            us_state_abbr: Faker.definitions.us_state_abbr,
+            city_prefix: Faker.definitions.city_prefix,
+            city_suffix: Faker.definitions.city_suffix,
+            street_suffix: Faker.definitions.street_suffix,
+            uk_county: Faker.definitions.uk_county,
+            uk_country: Faker.definitions.uk_country,
+            catch_phrase_adjective: Faker.definitions.catch_phrase_adjective,
+            catch_phrase_descriptor: Faker.definitions.catch_phrase_descriptor,
+            catch_phrase_noun: Faker.definitions.catch_phrase_noun,
+            bs_adjective: Faker.definitions.bs_adjective,
+            bs_buzz: Faker.definitions.bs_buzz,
+            bs_noun: Faker.definitions.bs_noun,
+            domain_suffix: Faker.definitions.domain_suffix,
+            lorem: Faker.definitions.lorem,
+            phone_formats: Faker.definitions.phone_formats,
+            avatar_uri: Faker.definitions.avatar_uri
+        };
+
+        res.json(fakerDefinitions);
+    });
 }
 
 module.exports = FakerController;
